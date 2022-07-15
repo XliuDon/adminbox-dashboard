@@ -5,7 +5,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Pie, Line, Financial,
-ColorPicker, ColorMapping, Editors } from './pages';
+ColorPicker, ColorMapping, Editor } from './pages';
 
 import { useStateContext } from './contexts/ContextProvider';
 
@@ -61,7 +61,7 @@ const App = () => {
                 
                  {/* Apps */}
                  <Route path='/kanban' element={<Kanban />} />
-                 <Route path='/editors' element={<Editors />} />
+                 <Route path='/editor' element={<Editor />} />
                  <Route path='/calendar' element={<Calendar />} />
                  <Route path='/color-picker' element={<ColorPicker />} />
 
