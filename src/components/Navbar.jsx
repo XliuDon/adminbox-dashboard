@@ -22,7 +22,7 @@ const NavButton = ( {title, coustomFunc, icon, color, dotColor}) =>(
 );
 
 function Navbar() {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor } = useStateContext();
   useEffect(()=>{
     const handleResize = () => setScreenSize(window.innerWidth);
 
@@ -42,12 +42,12 @@ function Navbar() {
 
   return (
     <div className='flex justify-between p2 md:mx-6 relative'>
-      <NavButton title="Menu" coustomFunc={()=>setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color="blue" icon={<AiOutlineMenu />} />
+      <NavButton title="Menu" coustomFunc={()=>setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color={currentColor} icon={<AiOutlineMenu />} />
 
       <div className='flex'>
-        <NavButton title="Cart" coustomFunc={()=>handleClick('cart')} color="blue" icon={<FiShoppingCart />} />
-        <NavButton title="Chat" dotColor="#03C9D7" coustomFunc={()=>handleClick('chat')} color="blue" icon={<BsChatLeft />} />
-        <NavButton title="Notification" dotColor="#03C9D7" coustomFunc={()=>handleClick('notification')} color="blue" icon={<RiNotification3Line />} />
+        <NavButton title="Cart" coustomFunc={()=>handleClick('cart')} color={currentColor} icon={<FiShoppingCart />} />
+        <NavButton title="Chat" dotColor="#03C9D7" coustomFunc={()=>handleClick('chat')} color={currentColor} icon={<BsChatLeft />} />
+        <NavButton title="Notification" dotColor="#03C9D7" coustomFunc={()=>handleClick('notification')} color={currentColor} icon={<RiNotification3Line />} />
         <TooltipComponent content="Profile"
           position='BottomCenter'
         >
@@ -62,9 +62,11 @@ function Navbar() {
         </TooltipComponent>
 
         {isClicked.cart && <Cart />}
-        {isClicked.chat && <Chat />}
-        {isClicked.notification && <Notification />}
-        {isClicked.userProfile && <userProfile />}
+        {isClicked.chat && <Chat />}        
+        <div id="notification" className='fixed right-4 bottom-4' style={{zIndex: '1000'}}>
+          {isClicked.notification && <Notification />}
+        </div>
+        {isClicked.userProfile && <UserProfile />}
       </div>
     </div>
   )
