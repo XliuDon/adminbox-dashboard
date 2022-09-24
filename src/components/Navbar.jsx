@@ -62,11 +62,10 @@ function Navbar() {
         </TooltipComponent>
 
         {isClicked.cart && <Cart />}
-        {isClicked.chat && <Chat />}        
-        <div id="notification" className='fixed right-4 bottom-4' style={{zIndex: '1000'}}>
-          {isClicked.notification && <Notification />}
-        </div>
+        {isClicked.chat && <Chat />}  
+        {isClicked.notification && <Notification />}      
         {isClicked.userProfile && <UserProfile />}
+        <div id="notification" className='fixed right-4 bottom-4' style={{zIndex: '1000'}}></div>
       </div>
     </div>
   )

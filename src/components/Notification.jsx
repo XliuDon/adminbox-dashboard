@@ -1,19 +1,7 @@
-import React from 'react'
-import {Toast} from '@syncfusion/ej2-notifications'
-import { useStateContext } from '../contexts/ContextProvider';
+import React from 'react';
 
-function Notification() {
-  const { currentColor } = useStateContext();
+function Notification() { 
 
-  const toast = new Toast({
-    title:'Notification',
-    content: 'This is a notification',
-    timeOut: 3000,
-    showCloseButton: true,
-    position: { X: "Right", Y: "Bottom" }
-  });
-  toast.appendTo("#notification");
-  toast.show();
   return (
     <div />
   )

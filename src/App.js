@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
@@ -6,14 +6,26 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Pie, Line, Financial,
 ColorPicker, ColorMapping, Editor } from './pages';
+import Login from './pages/Login/Login'
+
 
 import { useStateContext } from './contexts/ContextProvider';
+import { registerLicense } from '@syncfusion/ej2-base';
 
 import './App.css';
 
+// Registering Syncfusion license key
+registerLicense(process.env.REACT_APP_SYNCFUSION_PRIVATE_KEY);
+
 const App = () => {
-  const {activeMenu, themeSettings, setThemeSettings, currentColor, currentMode} = useStateContext();
+  const {activeMenu, themeSettings, setThemeSettings, currentColor, currentMode, useToken} = useStateContext();
   
+  const { token, setToken} = useToken;
+  console.log("token",token);
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+
   return (
     <div className={currentMode=== 'Dark'? 'dark': ''}>
       <BrowserRouter>
