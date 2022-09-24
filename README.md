@@ -11,6 +11,10 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+DashBoard ScreenShoot:
+![image](https://user-images.githubusercontent.com/16602705/192083261-da44807d-e16a-4320-b907-21ed797ef9eb.png)
+
+
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
