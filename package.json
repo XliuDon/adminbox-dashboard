@@ -1,5 +1,5 @@
 {
-  "name": "dashboard",
+  "name": "adminbox-dashboard",
   "version": "0.1.0",
   "dependencies": {
     "@syncfusion/ej2": "^20.2.38",
