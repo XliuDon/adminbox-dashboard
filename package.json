@@ -1,7 +1,6 @@
 {
   "name": "dashboard",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@syncfusion/ej2": "^20.2.38",
     "@syncfusion/ej2-react-calendars": "^20.2.38",
